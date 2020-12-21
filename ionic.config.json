@@ -1,0 +1,7 @@
+{
+  "name": "workboost-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
