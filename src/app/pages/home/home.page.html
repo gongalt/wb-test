@@ -16,24 +16,47 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-list>
-          <ion-item>
-            <ion-avatar slot="start">
-              <img src="../../../assets/imgs/avatar-finn.png">
-            </ion-avatar>
-            <ion-label>
-              <ion-row>
-                <ion-col class="ion-no-padding" size="6">
-                <h2><strong>Finn</strong></h2>
+        <div *ngIf="isSubjects; else isCoaches">
+          <ion-list>
+            <ion-item *ngFor="let subject of subjects">
+              <ion-avatar slot="start">
+                <img src="{{ subject?.img }}">
+              </ion-avatar>
+              <ion-label>
+                <ion-row>
+                  <ion-col class="ion-no-padding" size="6">
+                  <h2><strong>{{ subject?.title }}</strong></h2>
+                    </ion-col>
+                  <ion-col class="ion-no-padding ion-text-end"  size="6">
+                    <span class="moment-text">{{ subject?.moments }}</span>
                   </ion-col>
-                <ion-col class="ion-no-padding ion-text-end"  size="6">
-                  <span class="moment-text">8 mins. ago</span>
-                </ion-col>
-              </ion-row>
-              <p>Listen, I've had a pretty messed up day...</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
+                </ion-row>
+                <p>{{ subject?.description }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+       
+        <ng-template #isCoaches>
+          <ion-list>
+            <ion-item *ngFor="let subject of subjects.slice().reverse()">
+              <ion-avatar slot="start">
+                <img src="{{ subject?.img }}">
+              </ion-avatar>
+              <ion-label>
+                <ion-row>
+                  <ion-col class="ion-no-padding" size="6">
+                  <h2><strong>{{ subject?.title }}</strong></h2>
+                    </ion-col>
+                  <ion-col class="ion-no-padding ion-text-end"  size="6">
+                    <span class="moment-text">{{ subject?.moments }}</span>
+                  </ion-col>
+                </ion-row>
+                <p>{{ subject?.description }}</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ng-template>
       </ion-col>
     </ion-row>
   </ion-grid>

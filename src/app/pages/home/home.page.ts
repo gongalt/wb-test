@@ -1,21 +1,27 @@
 import { Component, OnInit } from "@angular/core";
-import { SimpleService } from "src/app/services/simple.service";
-
+import subjectsData from "src/constants/subjects.json";
+interface Subjects {
+  id: Number;
+  img: String;
+  title: String;
+  description: String;
+  moments: String;
+}
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
   styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit {
-  constructor(private simpleService: SimpleService) {}
+  subjects: Subjects[] = subjectsData;
+  isSubjects: Boolean = true;
+  isCoaches: Boolean = false;
+  constructor() {}
 
-  ngOnInit() {
-    this.simpleService.getUsers().subscribe((res) => {
-      console.log("res", res);
-    });
-  }
+  ngOnInit() {}
 
   segmentChanged(event) {
-    console.log("event", event);
+    this.isSubjects = !this.isSubjects;
+    this.isCoaches = !this.isCoaches;
   }
 }

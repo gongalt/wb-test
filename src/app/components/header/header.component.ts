@@ -11,7 +11,5 @@ export class HeaderComponent implements OnInit {
   @Input() showAvatar: boolean = true;
   constructor() {}
 
-  ngOnInit() {
-    console.log("leftTitle", this.leftTitle);
-  }
+  ngOnInit() {}
 }
