@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from "@angular/core";
 export class HeaderComponent implements OnInit {
   @Input() leftTitle: string = "";
   @Input() title: string = "";
-  @Input() showAvatar: boolean = true;
+  @Input() showAvatar: boolean = false;
   constructor() {}
 
   ngOnInit() {}

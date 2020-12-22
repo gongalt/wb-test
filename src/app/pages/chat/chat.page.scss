@@ -1,0 +1,69 @@
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  white-space: pre-wrap;
+}
+
+.my-message {
+  background: var(--ion-color-primary);
+  color: #fff;
+}
+
+.other-message {
+  background: var(--ion-color-tertiary);
+  color: #000;
+}
+
+.other-message:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  right: auto;
+  top: auto;
+  bottom: -20px;
+  border: 22px solid;
+  border-color: transparent transparent transparent var(--ion-color-tertiary);
+}
+
+.my-message:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 0px;
+  top: auto;
+  bottom: -20px;
+  border: 22px solid;
+  border-color: transparent var(--ion-color-primary) transparent transparent;
+}
+
+.time {
+  color: var(--ion-color-light);
+  font-size: small;
+}
+
+.other-message .time {
+  color: var(--ion-color-medium);
+}
+
+.message-input {
+  width: 100%;
+  border: 1px solid var(--ion-color-medium);
+  border-radius: 10px;
+  resize: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.message-btn {
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+}
+
+h5 {
+  color: var(--ion-color-secondary);
+}
