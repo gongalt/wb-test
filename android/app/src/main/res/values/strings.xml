@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">workboost-test</string>
+    <string name="title_activity_main">workboost-test</string>
+    <string name="package_name">com.wb.test</string>
+    <string name="custom_url_scheme">com.wb.test</string>
+</resources>
